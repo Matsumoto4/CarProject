@@ -1,7 +1,7 @@
-import java.util.FormatFlagsConversionMismatchException;
+
 import java.util.Scanner;
 
-public class Car {
+abstract class Car {
 	String color ="";
 	int km =0;
 	public Car(String mColor,int mkm) {
@@ -55,13 +55,13 @@ class Purius extends Car{
 		    	}else {
 		    		battery = 0;
 		    	}
-		    	
-		    }
-		    System.out.println("スーーーッ"+"\n走行距離"+ km + "\nバッテリー寿命：" + battery +"年");
+		    			    System.out.println("スーーーッ"+"\n走行距離"+ km + "\nバッテリー寿命：" + battery +"年");
 		    if(battery==0) {
 		    	System.out.println("バッテリの寿命が無くなりました。バッテリーを確認して下さい");
 		    	battery=50;
 		    }	    	
+		    }
+
 	    	
 	    }
 
@@ -104,13 +104,13 @@ class Stera extends Car{
 		    	}else {
 		    		battery = 0;
 		    	}
-		    	
-		    }
-			System.out.println("・・・・・・・・・・・・（エンジン音無し）"+"\n走行距離"+ km  + "\nバッテリー寿命：" + battery +"年");
+		    				System.out.println("・・・・・・・・・・・・（エンジン音無し）"+"\n走行距離"+ km  + "\nバッテリー寿命：" + battery +"年");
 		    if(battery==0) {
 		    	System.out.println("バッテリの寿命が無くなりました。バッテリーを確認して下さい");
 		    	battery=50;
 		    }	    	
+		    }
+
 	    	
 	    }
 	    
