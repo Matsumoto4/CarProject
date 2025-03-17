@@ -46,7 +46,7 @@ public class MainClass {
 		Scanner scn = new Scanner(System.in);
 		String str_Answer = "";
 		
-		System.out.println("車の運転をしますか？それとも自動運転の車を５台発注をしますか？(D:車の運転、A：５台発注）");
+		System.out.println("車の運転をしますか？それとも自動運転の機械を５台発注をしますか？(D:車の運転、A：５台発注）");
 		str_Answer = scn.nextLine();
 		if(str_Answer.equals("D")) {
 			a.mMain();	
@@ -80,7 +80,7 @@ public class MainClass {
 	}
 
 	public void make5Car() {
-		System.out.println("自動運転の自動車を５台注文します");
+		System.out.println("自動運転の機械を５台注文します");
 		ArrayList<ArrayList<Auto_drive>> car_auto_list = new ArrayList<>();
 
 		for(int i = 0; i < 5 ; i++) {
@@ -96,7 +96,8 @@ public class MainClass {
 			Car5_list.put(aa.mess_Auto_drive(),i);
 			}
 		}
-		
+	
+		//プリウスのデータだけを再出力するコード
 		Car5_list.forEach((key, value) -> {
 		    if (key.contains("Prius")) {
 		        System.out.println(key + " : " + value);
@@ -110,21 +111,24 @@ public class MainClass {
 		Scanner scn = new Scanner(System.in);
 		String str_Answer ="";
 
-		System.out.println("車種を選択してください（P:プリウス,S:ステラ");
+		System.out.println("種類を選択してください（P:プリウス,S:ステラ,R:ルンバ）");
 		str_Answer = scn.nextLine();
-		while(!str_Answer.equals("P") && !str_Answer.equals("S")) {
-			System.out.println("車種は半角の大文字で入力してください");
-			System.out.println("車種を選択してください（P:プリウス,S:ステラ");
+		while(!str_Answer.equals("P") && !str_Answer.equals("S") && !str_Answer.equals("R") ) {
+			System.out.println("種類は半角の大文字で入力してください");
+			System.out.println("種類を選択してください（P:プリウス,S:ステラ,R:ルンバ）");
 			str_Answer = scn.nextLine();
 		}
 		if(str_Answer.equals("P")) {
 			Prius_Auto p = new Prius_Auto("");
 			p.color = p.carColor();
 			return_Auto_drive = p;
-		}else {
+		}else if(str_Answer.equals("S")) {
 			Stella_Auto s = new Stella_Auto("");
 			s.color = s.carColor();
 			return_Auto_drive = s;
+		}else {
+			Roomba r = new Roomba();
+			return_Auto_drive = r;
 		}
 		return return_Auto_drive;
 	}
